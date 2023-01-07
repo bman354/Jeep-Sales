@@ -64,7 +64,7 @@ public interface JeepSalesController {
 							name = "trim",
 							allowEmptyValue = false,
 							required = false,
-							description = "levl of trim")
+							description = "level of trim")
 			}
 	)
 
