@@ -53,9 +53,15 @@ class FetchJeepTest extends BaseTest {
 
 		// make sure the response is 200
 		assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
-
+		
+		
+		//get our actual jeep from our response and create an expected jeep
+		List<Jeep> actual = response.getBody();
 		List<Jeep> expected = buildExpected();
-		assertThat(response.getBody()).isEqualTo(expected);
+		
+		actual.forEach(jeep -> jeep.setModelPK(null));
+		
+		assertThat(actual).isEqualTo(expected);
 	}
 
 	public List<Jeep> buildExpected() {
