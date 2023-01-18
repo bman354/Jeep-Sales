@@ -2,6 +2,7 @@ package com.promineotech.jeep.controller;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -67,8 +68,24 @@ class FetchJeepTest extends BaseTest {
 	public List<Jeep> buildExpected() {
 		List<Jeep> list = new LinkedList<Jeep>();
 
-		list.add(Jeep.builder().build());
-
+	    // @formatter:off
+	    list.add(Jeep.builder()
+	        .modelId(JeepModel.WRANGLER)
+	        .trimLevel("Sport")
+	        .numDoors(2)
+	        .wheelSize(17)
+	        .basePrice(new BigDecimal("28475.00"))
+	        .build());
+	    
+	    
+	    list.add(Jeep.builder()
+	        .modelId(JeepModel.WRANGLER)
+	        .trimLevel("Sport")
+	        .numDoors(4)
+	        .wheelSize(17)
+	        .basePrice(new BigDecimal("31975.00"))
+	        .build());
+	    // @formatter:on
 		return list;
 	}
 

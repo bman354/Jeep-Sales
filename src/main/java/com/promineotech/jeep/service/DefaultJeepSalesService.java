@@ -17,7 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class DefaultJeepSalesService implements JeepSalesService {
-	
+	@Autowired
 	private JeepSalesDao jeepSalesDao;
 	
 	private final Logger Logger = LoggerFactory.getLogger(DefaultJeepSalesService.class);
@@ -26,8 +26,7 @@ public class DefaultJeepSalesService implements JeepSalesService {
 	@Override
 	public List<Jeep> fetchJeeps(JeepModel model, String trim) {
 
-		Logger.info("Fetch jeeps was called with model={} and trim=[]", model, trim);
-		
+		Logger.info("Fetch jeeps was called with model={} and trim={}", model, trim);
 		jeeps = jeepSalesDao.fetchJeeps(model, trim);
 		
 		return jeeps;

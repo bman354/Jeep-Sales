@@ -29,10 +29,4 @@ public class BasicJeepSalesController implements JeepSalesController {
 		Logger.info("model={}, trim={}", model, trim);	
 		return jeepSalesService.fetchJeeps(model, trim);
 	}
-	
-	
-	
-	
-	
-
 }

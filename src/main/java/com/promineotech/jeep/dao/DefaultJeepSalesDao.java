@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.promineotech.jeep.entity.Jeep;
@@ -21,13 +22,13 @@ import lombok.extern.slf4j.Slf4j;
 
 
 @Service
+@Component
 @Slf4j
 public class DefaultJeepSalesDao implements JeepSalesDao {
 	
 	private final Logger Logger = LoggerFactory.getLogger(DefaultJeepSalesDao.class);
 	
 	@Autowired
-	
 	private NamedParameterJdbcTemplate jdbcTemplate;
 	
 	@Override
